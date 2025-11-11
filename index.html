@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Novembro Azul - Conscientização sobre o Câncer de Próstata</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link src="style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Asap:ital,wght@0,100..900;1,100..900&family=Inconsolata:wght@200..900&family=Maven+Pro:wght@400..900&family=Momo+Trust+Display&family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Asap:ital,wght@0,100..900;1,100..900&family=Inconsolata:wght@200..900&family=Maven+Pro:wght@400..900&family=Momo+Trust+Display&family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header role="banner">
+      <div class="logo-container">
+        <div class="logo">
+          <img
+            src="./assets/laço-novembro.png"
+            alt="Laço azul, símbolo mundial de conscientização e combate ao câncer de próstata."
+            aria-hidden="false"
+          />
+        </div>
+        <div
+          id="textos-logo"
+          aria-label="Título principal da campanha Novembro Azul"
+        >
+          <h1>Novembro Azul</h1>
+          <p class="subtitle">Mês Mundial de Combate ao Câncer de Próstata</p>
+        </div>
+        <div
+          id="tema-toggle"
+          aria-label="Botão para alternar entre tema claro e tema escuro"
+        >
+          <button
+            id="theme-toggle-btn"
+            class="theme-toggle-btn"
+            aria-label="Alternar tema claro e escuro"
+            title="Alternar Tema"
+          >
+            🌙
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <nav role="navigation" aria-label="Menu principal do site">
+      <div class="nav-container">
+        <div
+          class="hamburger"
+          id="hamburger"
+          role="button"
+          aria-controls="navLinks"
+          aria-expanded="false"
+          aria-label="Abrir e fechar menu de navegação do site"
+          tabindex="0"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </div>
+        <div class="nav-links" id="navLinks" role="menu" tabindex="-1">
+          <a
+            href="#sobre"
+            class="nav-link"
+            role="menuitem"
+            aria-label="Ir para a seção Sobre o Novembro Azul"
+            >Sobre</a
+          >
+          <a
+            href="#dados"
+            class="nav-link"
+            role="menuitem"
+            aria-label="Ir para a seção de Dados Estatísticos de Saúde de Juiz de Fora"
+            >Dados de Saúde</a
+          >
+          <a
+            href="#prevencao"
+            class="nav-link"
+            role="menuitem"
+            aria-label="Ir para a seção de Prevenção e Fatores de Risco"
+            >Prevenção</a
+          >
+          <a
+            href="#diagnostico"
+            class="nav-link"
+            role="menuitem"
+            aria-label="Ir para a seção de Diagnóstico e Tratamento"
+            >Diagnóstico</a
+          >
+          <a
+            href="#dicas-de-saude"
+            class="nav-link"
+            role="menuitem"
+            aria-label="Ir para a seção de Dicas de Saúde"
+            >Dicas de Saúde</a
+          >
+          <a
+            href="#cadastro"
+            class="nav-link"
+            role="menuitem"
+            aria-label="Ir para a seção de Cadastro"
+            >Cadastro</a
+          >
+
+          <a
+            href="#privacidade"
+            class="nav-link"
+            role="menuitem"
+            aria-label="Ir para a seção de Privacidade e LGPD"
+            >Privacidade
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section id="sobre" aria-labelledby="sobre-titulo">
+        <h2 class="section-title" id="sobre-titulo">Sobre o Novembro Azul</h2>
+        <div class="card">
+          <p>
+            Novembro Azul é um movimento internacional que acontece durante o
+            mês de novembro para reforçar a importância da prevenção e do
+            diagnóstico precoce do câncer de próstata.
+          </p>
+          <p>
+            A doença é o tipo de câncer mais comum entre os homens no Brasil
+            (depois do câncer de pele não-melanoma). A campanha busca quebrar o
+            preconceito masculino de ir ao médico e incentivar a realização dos
+            exames preventivos.
+          </p>
+
+          <div class="grid-2" style="margin-top: 2rem">
+            <div class="stat-card">
+              <div class="stat-number" role="presentation">71.730</div>
+              <div class="stat-label">
+                Novos casos estimados por ano no Brasil (2023-2025)
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" role="presentation">1º</div>
+              <div class="stat-label">
+                Posição entre os tipos de câncer mais comuns em homens
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="dados" aria-labelledby="dados-titulo">
+        <h2 class="section-title" id="dados-titulo">
+          Dados de Procedimentos - Juiz de Fora/MG
+        </h2>
+        <div class="card">
+          <p>
+            Os dados abaixo, extraídos do Tabnet (SIA/SUS), mostram o volume
+            mensal de procedimentos realizados em Juiz de Fora/MG (Jan-Ago 2025,
+            dados simulados). Eles ilustram a jornada do paciente desde a
+            consulta inicial até a confirmação diagnóstica.
+          </p>
+
+          <div
+            class="series-selector"
+            id="seriesSelector"
+            style="justify-content: center; margin-bottom: 1.5rem"
+            role="group"
+            aria-label="Filtro para selecionar séries de dados do gráfico"
+          ></div>
+
+          <div class="chart-container">
+            <canvas
+              id="mainChart"
+              role="img"
+              aria-label="Gráfico de dados de saúde. Barras para consultas e exames de PSA, linha para biópsias. Exibe a contagem mensal dos procedimentos Biópsias de Próstata, Exames de PSA e Consultas Especializadas em Juiz de Fora, de Janeiro a Agosto de 2025."
+            ></canvas>
+          </div>
+
+          <div
+            class="insight-box"
+            role="complementary"
+            aria-labelledby="insight-title"
+          >
+            <div class="insight-title" id="insight-title">
+              Análise do Funil Diagnóstico
+            </div>
+            <p id="insight-text">
+              Os dados revelam um fluxo de cuidado lógico e eficiente. O grande
+              volume de <strong>consultas especializadas</strong> representa a
+              porta de entrada para a avaliação da saúde. Deste total, uma parte
+              avança para o rastreamento com <strong>exames de PSA</strong>.
+              Finalmente, apenas uma pequena fração com alta suspeita realiza a
+              <strong>biópsia</strong> para confirmação. Isso demonstra que o
+              sistema de saúde funciona como um filtro, focando os procedimentos
+              mais complexos apenas nos casos realmente necessários.
+            </p>
+          </div>
+
+          <h3 class="table-title" id="tableTitle">
+            Tabela de Dados Detalhados por Mês
+          </h3>
+          <div class="table-container">
+            <table
+              class="data-table"
+              id="dataTable"
+              aria-describedby="tableTitle"
+            >
+              <caption class="sr-only">
+                Tabela detalhada com os dados de procedimentos de saúde
+                masculina em Juiz de Fora, por mês.
+              </caption>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="prevencao" aria-labelledby="prevencao-titulo">
+        <h2 class="section-title" id="prevencao-titulo">
+          Prevenção e Fatores de Risco
+        </h2>
+        <div class="card">
+          <p>
+            A detecção precoce é a chave para o tratamento bem-sucedido do
+            câncer de próstata. Homens a partir de 50 anos (ou 45, se houver
+            fatores de risco) devem conversar com seu médico sobre o
+            rastreamento.
+          </p>
+
+          <div class="info-grid">
+            <div class="info-item">
+              <div class="info-icon" aria-hidden="true"><i> 🧠 </i></div>
+              <div>
+                <h3>Sintomas de Alerta</h3>
+                <p>
+                  Fique atento a dificuldades para urinar, necessidade de urinar
+                  mais vezes, diminuição do jato de urina ou sangue na urina. Na
+                  fase inicial, pode não haver sintomas.
+                </p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon" aria-hidden="true"><i>👨‍⚕️</i></div>
+              <div>
+                <h3>Exame de Toque Retal</h3>
+                <p>
+                  O médico avalia tamanho, forma e textura da próstata. É um
+                  exame rápido e essencial, que pode detectar anomalias.
+                </p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon" aria-hidden="true"><i>🩸</i></div>
+              <div>
+                <h3>Exame de PSA</h3>
+                <p>
+                  Um exame de sangue que mede a quantidade do Antígeno
+                  Prostático Específico. Níveis altos podem indicar problemas na
+                  próstata.
+                </p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon" aria-hidden="true"><i>🥗</i></div>
+              <div>
+                <h3>Hábitos Saudáveis</h3>
+                <p>
+                  Uma dieta rica em frutas, verduras e grãos, e pobre em
+                  gordura, além da prática de exercícios, ajuda a diminuir o
+                  risco.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="insight-box" style="margin-top: 2rem">
+            <div class="insight-title">Principais Fatores de Risco</div>
+            <p>
+              Os fatores mais importantes são: <strong>idade</strong> (risco
+              aumenta significativamente após os 50 anos),
+              <strong>história familiar</strong> (pai ou irmão com a doença
+              antes dos 60 anos) e <strong>raça/etnia</strong> (maior incidência
+              em homens negros).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="diagnostico" aria-labelledby="diagnostico-titulo">
+        <h2 class="section-title" id="diagnostico-titulo">
+          Diagnóstico e Tratamento
+        </h2>
+        <div class="card">
+          <p>
+            Se os exames de rastreamento (Toque e PSA) apresentarem alterações,
+            o médico poderá solicitar outros exames para confirmar o
+            diagnóstico, sendo a biópsia o principal deles.
+          </p>
+
+          <h3 style="margin-top: 1.5rem; color: var(--azul-escuro)">
+            Opções de Tratamento
+          </h3>
+          <p>
+            O tratamento é individualizado e depende do estágio da doença e do
+            grau de agressividade (Gleason). As principais opções incluem:
+          </p>
+
+          <div class="info-grid" id="opcoes-tratamento-grid">
+            <div class="info-item">
+              <div class="info-icon" aria-hidden="true"><i> ⌚ </i></div>
+              <div>
+                <h3>Vigilância Ativa</h3>
+                <p>
+                  Acompanhamento rigoroso para tumores de baixa agressividade,
+                  adiando tratamentos invasivos.
+                </p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon" aria-hidden="true"><i> 🔪 </i></div>
+              <div>
+                <h3>Cirurgia (Prostatectomia)</h3>
+                <p>
+                  Remoção da glândula prostática. Pode ser feita por métodos
+                  abertos, laparoscópicos ou robóticos.
+                </p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon" aria-hidden="true"><i> ⚡ </i></div>
+              <div>
+                <h3>Radioterapia</h3>
+                <p>
+                  Uso de radiação (externa ou implantes internos) para destruir
+                  as células cancerosas.
+                </p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon" aria-hidden="true"><i> 🧪 </i></div>
+              <div>
+                <h3>Hormonioterapia</h3>
+                <p>
+                  Bloqueio de hormônios masculinos para retardar ou interromper
+                  o crescimento do câncer.
+                </p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon" aria-hidden="true"><i> 💉 </i></div>
+              <div>
+                <h3>Quimioterapia</h3>
+                <p>
+                  Uso de medicamentos para matar células cancerosas que se
+                  espalharam para outras partes do corpo.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="insight-box" style="margin-top: 2rem">
+            <div class="insight-title">Entendendo a Escala de Gleason</div>
+            <p>
+              Após a biópsia, o câncer é classificado pela
+              <strong>Escala de Gleason</strong>, que indica o grau de
+              agressividade do tumor. A pontuação vai de 2 a 10.
+            </p>
+            <ul style="margin-top: 0.5rem; margin-left: 1.5rem">
+              <li>
+                <strong>Gleason 6:</strong> Câncer de baixa agressividade,
+                geralmente com bom prognóstico.
+              </li>
+              <li><strong>Gleason 7:</strong> Agressividade intermediária.</li>
+              <li>
+                <strong>Gleason 8 a 10:</strong> Câncer de alta agressividade,
+                com maior probabilidade de crescimento e metástase.
+              </li>
+            </ul>
+            <p style="margin-top: 0.5rem">
+              Essa pontuação é fundamental para decidir o melhor tratamento a
+              ser seguido.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="dicas-de-saude" aria-labelledby="lazer-titulo">
+        <h2 class="section-title" id="lazer-titulo">
+          Dicas de Lazer e Saúde em Juiz de Fora
+        </h2>
+        <div class="card">
+          <p>
+            Mover o corpo é essencial para a saúde física e mental. Aproveite os
+            belos espaços da cidade para caminhar, correr, pedalar ou
+            simplesmente relaxar ao ar livre. O exercício físico regular é um
+            aliado poderoso na prevenção de doenças.
+          </p>
+
+          <h3 style="margin-top: 1.5rem; color: var(--azul-escuro)">
+            Sugestões de Locais para Atividades Físicas e Lazer
+            <br />
+            <br />
+          </h3>
+
+          <ul
+            class="dicas-lazer-list"
+            style="margin-left: 1.5rem; list-style-type: none"
+          >
+            <li style="margin-bottom: 1.5rem">
+              <a
+                href="https://www.pjf.mg.gov.br/administracao_indireta/mapro/"
+                target="_blank"
+                class="dicas-link"
+                aria-label="Acessar o site oficial do Museu Mariano Procópio, abre em nova aba"
+              >
+                <strong>Museu Mariano Procópio</strong>
+              </a>
+              <p
+                style="
+                  font-size: 0.9em;
+                  margin-top: 0.2rem;
+                  color: var(--cinza-escuro);
+                "
+              >
+                Aproveite o vasto parque para caminhadas e contemplação.
+                <br />
+                <a
+                  href="https://www.instagram.com/museumarianoprocopio/"
+                  target="_blank"
+                  class="instagram-link"
+                  aria-label="Acessar o Instagram do Museu Mariano Procópio, abre em nova aba"
+                >
+                  🔗 Instagram
+                </a>
+              </p>
+            </li>
+            <li style="margin-bottom: 1.5rem">
+              <a
+                href="https://www2.ufjf.br/ufjf/culturaelazer/espacos-de-lazer/"
+                target="_blank"
+                class="dicas-link"
+                aria-label="Acessar o site com informações sobre o Anel Viário da UFJF, abre em nova aba"
+              >
+                <strong>Anel Viário da UFJF</strong>
+              </a>
+              <p
+                style="
+                  font-size: 0.9em;
+                  margin-top: 0.2rem;
+                  color: var(--cinza-escuro);
+                "
+              >
+                Espaço ideal para corridas e pedaladas seguras.
+              </p>
+            </li>
+            <li style="margin-bottom: 1.5rem">
+              <a
+                href="https://www.pjf.mg.gov.br/secretarias/sesmaur/meio_ambiente/parque_lajinha/"
+                target="_blank"
+                class="dicas-link"
+                aria-label="Acessar o site oficial do Parque da Lajinha, abre em nova aba"
+              >
+                <strong>Parque da Lajinha</strong>
+              </a>
+              <p
+                style="
+                  font-size: 0.9em;
+                  margin-top: 0.2rem;
+                  color: var(--cinza-escuro);
+                "
+              >
+                Um refúgio natural para exercícios e piqueniques em família.
+                <br />
+                <a
+                  href="https://www.instagram.com/parquedalajinhajf/"
+                  target="_blank"
+                  class="instagram-link"
+                  aria-label="Acessar o Instagram do Parque da Lajinha, abre em nova aba"
+                >
+                  🔗 Instagram
+                </a>
+              </p>
+            </li>
+            <li style="margin-bottom: 1.5rem">
+              <a
+                href="https://www2.ufjf.br/jardimbotanico/"
+                target="_blank"
+                class="dicas-link"
+                aria-label="Acessar o site oficial do Jardim Botânico da UFJF, abre em nova aba"
+              >
+                <strong>Jardim Botânico UFJF</strong>
+              </a>
+              <p
+                style="
+                  font-size: 0.9em;
+                  margin-top: 0.2rem;
+                  color: var(--cinza-escuro);
+                "
+              >
+                Ótimo para caminhadas contemplativas e contato com a natureza.
+                <br />
+                <a
+                  href="http://instagram.com/jardimbotanicoufjf/"
+                  target="_blank"
+                  class="instagram-link"
+                  aria-label="Acessar o Instagram do Jardim Botânico da UFJF, abre em nova aba"
+                >
+                  🔗 Instagram
+                </a>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section id="informacoes-extras" aria-labelledby="carrossel-titulo">
+        <h2 class="section-title" id="carrossel-titulo">
+          Informações Extras sobre o Câncer de Próstata
+        </h2>
+        <div class="card carousel-card">
+          <div class="carousel-container">
+            <div class="carousel-slide active">
+              <div class="carousel-icon">🩸</div>
+              <h3>PSA: Não é Apenas Câncer</h3>
+              <p>
+                <strong>CURIOSIDADE:</strong> O nível de PSA (Antígeno
+                Prostático Específico) pode aumentar por outras razões além do
+                câncer, como **infecções** (prostatite), inflamações ou pelo
+                simples crescimento benigno da glândula (HPB).
+              </p>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="carousel-icon">⏰</div>
+              <h3>Idade Padrão vs. Alto Risco</h3>
+              <p>
+                <strong>ALERTA:</strong> A idade padrão para iniciar o
+                rastreamento é aos **50 anos**. No entanto, homens com
+                **histórico familiar** (pai ou irmão) ou de **etnia negra**
+                devem começar mais cedo, aos **45 anos**.
+              </p>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="carousel-icon">🛡️</div>
+              <h3>Tratamento: Vigilância Ativa</h3>
+              <p>
+                <strong>CURIOSIDADE:</strong> Nem todos os cânceres de próstata
+                de baixo risco exigem cirurgia ou radioterapia imediata. A
+                **Vigilância Ativa** monitora o tumor de perto, evitando
+                tratamentos invasivos e seus efeitos colaterais desnecessários.
+              </p>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="carousel-icon">💧</div>
+              <h3>HPB (Benigna) vs. Câncer (Maligno)</h3>
+              <p>
+                <strong>CURIOSIDADE:</strong> Problemas como **dificuldade para
+                urinar** ou **jato fraco** são muito mais frequentemente
+                causados pela **Hiperplasia Prostática Benigna (HPB)**, um
+                crescimento natural e não-cancerígeno da próstata.
+              </p>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="carousel-icon">🌰</div>
+              <h3>Tamanho da Glândula</h3>
+              <p>
+                <strong>CURIOSIDADE:</strong> A próstata de um adulto saudável
+                tem, em média, o tamanho e o formato de uma **noz ou castanha**,
+                pesando cerca de 20 gramas. Ela cresce gradualmente com o
+                envelhecimento.
+              </p>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="carousel-icon">🍅</div>
+              <h3>O Poder do Licopeno</h3>
+              <p>
+                <strong>CURIOSIDADE:</strong> Estudos sugerem que uma dieta rica
+                em **licopeno** (abundante em tomates cozidos) e **selênio** (em
+                castanha-do-pará) pode estar associada a um risco reduzido no
+                desenvolvimento da doença.
+              </p>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="carousel-icon">🦴</div>
+              <h3>Metástase: O Alerta da Dor</h3>
+              <p>
+                <strong>ALERTA MÁXIMO:</strong> Em estágios avançados
+                (metástase), o câncer de próstata costuma se espalhar
+                primeiramente para os **ossos** (coluna, quadril), causando dor.
+                Este é um sinal de que o diagnóstico precoce foi perdido.
+              </p>
+            </div>
+            <div class="carousel-slide">
+              <div class="carousel-icon">🧔🏿‍♂️</div>
+              <h3>Fatores de Risco e Rastreamento</h3>
+              <p>
+                O risco de desenvolver câncer de próstata aumenta com a
+                **idade** (após os 65 anos) e com **histórico familiar** (pai ou
+                irmão). É crucial que **homens negros** iniciem o rastreamento
+                mais cedo, pois a incidência e mortalidade são
+                significativamente maiores nessa população.
+              </p>
+              <p>
+                A Sociedade Brasileira de Urologia (SBU) recomenda o início do
+                rastreamento (exame de toque retal e PSA) a partir dos 50 anos
+                para a população geral, ou **a partir dos 45 anos** para aqueles
+                com fatores de risco.
+              </p>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="carousel-icon">🧪</div>
+              <h3>Testosterona e Reposição</h3>
+              <p>
+                <strong>ALERTA:</strong> Embora o câncer de próstata seja
+                impulsionado pela testosterona, a reposição hormonal em homens
+                saudáveis (sem diagnóstico) não aumenta comprovadamente o risco
+                de desenvolver a doença. Contudo, ela é estritamente
+                contraindicada para quem já tem o câncer.
+              </p>
+            </div>
+
+            <button class="carousel-btn prev" aria-label="Slide anterior">
+              &#10094;
+            </button>
+            <button class="carousel-btn next" aria-label="Próximo slide">
+              &#10095;
+            </button>
+            <div class="carousel-dots"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="cadastro" aria-labelledby="cadastro-titulo">
+        <h2 class="section-title" id="cadastro-titulo">Cadastro</h2>
+        <div class="card">
+          <div class="cadastro-area">
+            <div class="cadastro-header" aria-hidden="ture">
+              <p>
+                Cuidado é o melhor remédio! Não adie, faça seu cadastro hoje e
+                garanta um check-up preventivo gratuito para combater o câncer
+                de próstata. Sua saúde merece essa atenção.
+              </p>
+              <button type="button" class="botao-cadastro">
+                <a
+                  href="cadastro.html"
+                  target="_blank"
+                  title="Ir para o Cadastro"
+                  >Ir para o cadastro</a
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="privacidade" aria-labelledby="privacidade-titulo">
+        <h2 class="section-title" id="privacidade-titulo">
+          Privacidade e Proteção de Dados
+        </h2>
+        <div class="card">
+          <div class="lgpd-notice">
+            <div class="lgpd-header" aria-hidden="true">
+              🔒 COMPROMISSO COM A LGPD
+            </div>
+            <p>
+              Esta plataforma educacional foi desenvolvida em conformidade com a
+              Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018). Não
+              utilizamos cookies e não coletamos nenhum dado pessoal dos
+              usuários. Todos os dados exibidos são agregados, anonimizados e
+              provenientes de fontes públicas oficiais (DATASUS).
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <div class="footer-content">
+        <button
+          id="backToTopBtn"
+          class="back-to-top"
+          aria-label="Voltar para o topo da página"
+          title="Voltar ao Topo"
+        >
+          &uarr;
+        </button>
+        <p>Novembro Azul - Combate ao Câncer de Próstata</p>
+        <div class="footer-links">
+          <a
+            href="https://www.inca.gov.br"
+            class="footer-link"
+            target="_blank"
+            aria-label="Acessar o site do Instituto Nacional do Câncer (INCA), abre em nova aba"
+            >INCA</a
+          >
+          <a
+            href="https://www.portaldaurologia.org.br"
+            class="footer-link"
+            target="_blank"
+            aria-label="Acessar o site da Sociedade Brasileira de Urologia (SBU), abre em nova aba"
+            >Sociedade Brasileira de Urologia</a
+          >
+          <a
+            href="https://datasus.saude.gov.br"
+            class="footer-link"
+            target="_blank"
+            aria-label="Acessar o site do Departamento de Informática do SUS (DATASUS), abre em nova aba"
+            >DATASUS</a
+          >
+        </div>
+        <div class="copyright">
+          &copy; 2025 - Desenvolvido para Fins Educacionais.<br />
+          <strong
+            >Conformidade LGPD: Esta plataforma não utiliza cookies nem coleta
+            dados pessoais.</strong
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

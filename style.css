@@ -1,0 +1,852 @@
+/* ======================================= */
+/* 1. VARIÁVEIS DE COR E TEMA */
+/* ======================================= */
+
+:root {
+    /* Cores de Paleta Fixas */
+    --color-primary: #007bff;
+    /* Azul Principal */
+    --color-secondary: #0056b3;
+    /* Azul Escuro para títulos/links */
+    --color-light-accent: #cce5ff;
+    /* Azul Claro para destaques/hover */
+    --color-light-grey: #f8f9fa;
+    /* Fundo Leve */
+    --color-dark-grey: #343a40;
+    /* Texto Principal */
+    --color-white: #ffffff;
+    --color-header-start: #2795F5;
+
+    /* Variáveis Semânticas (Tema CLARO - Padrão) */
+    --theme-background: var(--color-light-grey);
+    --theme-text: var(--color-dark-grey);
+    --theme-card-background: var(--color-white);
+    --theme-shadow: rgba(41, 40, 40, 0.3);
+    --theme-header-gradient: linear-gradient(135deg, var(--color-header-start), var(--color-primary));
+    --theme-header-text: var(--color-white);
+    --theme-link-default: var(--color-secondary);
+    --theme-link-hover: var(--color-primary);
+    --theme-nav-hover-bg: var(--color-light-accent);
+    --theme-insight-bg: var(--color-light-accent);
+    --theme-insight-border: var(--color-primary);
+    --theme-section-title-color: var(--color-secondary);
+    --theme-button-bg: var(--color-primary);
+    --theme-footer-bg: var(--color-dark-grey);
+    --theme-footer-text: var(--color-white);
+}
+
+/* TEMA ESCURO (DARK MODE) */
+[data-theme='dark'] {
+    /* Cores Dark Mode */
+    --color-dark-bg: #121212;
+    --color-dark-card: #1e1e1e;
+    --color-dark-text: #e0e0e0;
+    --color-dark-shadow: rgba(255, 255, 255, 0.15);
+    --color-dark-link: #64b5f6;
+    --color-dark-hover-bg: #333333;
+
+    /* Sobrescrever Variáveis Semânticas */
+    --theme-background: var(--color-dark-bg);
+    --theme-text: var(--color-dark-text);
+    --theme-card-background: var(--color-dark-card);
+    --theme-shadow: var(--color-dark-shadow);
+    --theme-header-gradient: linear-gradient(135deg, #004d99, #003366);
+    --theme-header-text: var(--color-dark-text);
+    --theme-link-default: var(--color-dark-link);
+    --theme-link-hover: #ffffff;
+    --theme-nav-hover-bg: var(--color-dark-hover-bg);
+    --theme-insight-bg: #2c2c2c;
+    --theme-insight-border: var(--color-dark-link);
+    --theme-section-title-color: var(--color-dark-text);
+    --theme-button-bg: #0056b3;
+    --theme-footer-bg: #0d0d0d;
+    --theme-footer-text: var(--color-dark-text);
+}
+
+
+/* ======================================= */
+/* 2. ESTILOS GERAIS */
+/* ======================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    /* Transição suave para o tema */
+}
+
+body {
+    background-color: var(--theme-background);
+    color: var(--theme-text);
+    line-height: 1.6;
+}
+
+/* ======================================= */
+/* HEADER E NAVEGAÇÃO */
+/* ======================================= */
+
+header {
+    background: var(--theme-header-gradient);
+    color: var(--theme-header-text);
+    padding: 2rem 1rem;
+    text-align: center;
+    position: relative;
+    /* Necessário para posicionar o botão */
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.logo {
+    display: flex;
+    width: 80px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2.5rem;
+}
+
+.logo img {
+    width: 8rem;
+}
+
+#textos-logo {
+    text-shadow: 3px 3px 4px rgba(46, 46, 47, 0.6);
+}
+
+#textos-logo h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#textos-logo p {
+    font-family: "Poppins", sans-serif;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+nav {
+    background-color: var(--theme-card-background);
+    box-shadow: 0 4px 7px var(--theme-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.nav-links {
+    display: flex;
+    transition: all 0.3s ease;
+}
+
+.nav-link {
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    color: var(--theme-text);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.nav-link:hover {
+    background-color: var(--theme-nav-hover-bg);
+    color: var(--theme-link-hover);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--theme-section-title-color);
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* ======================================= */
+/* 3. ESTILOS DO BOTÃO DE TOGGLE DE TEMA */
+/* ======================================= */
+
+.theme-toggle-btn {
+
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
+    background-color: var(--cor-toggle-background);
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    /* Aumentado ligeiramente para o emoji */
+    transition: background-color 0.3s, border-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    /* Ajuda a centralizar o emoji */
+    padding: 0;
+}
+
+.theme-toggle-btn:hover {
+    background: var(--theme-nav-hover-bg);
+    /*color: var(--theme-link-hover);*/
+}
+
+
+/* ======================================= */
+/* 4. ESTILOS GERAIS DE SEÇÃO E CARTÕES */
+/* ======================================= */
+
+section {
+    padding: 3rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--theme-section-title-color);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 160px;
+    height: 3px;
+    background-color: var(--color-primary);
+    margin: 0.5rem auto;
+}
+
+.card {
+    background-color: var(--theme-card-background);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px var(--theme-shadow);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Estatísticas */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: var(--theme-text);
+}
+
+/* Gráfico */
+.chart-container {
+    height: 500px;
+    margin-bottom: 2rem;
+}
+
+/* Insight Box */
+.insight-box {
+    background-color: var(--theme-insight-bg);
+    border-left: 4px solid var(--theme-insight-border);
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    color: var(--theme-text);
+}
+
+.insight-title {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--theme-link-default);
+}
+
+/* ======================================= */
+/* ESTILOS DE CARTÕES INFO (Prevenção e Tratamento) */
+/* ======================================= */
+
+.info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 1.5rem;
+    background-color: var(--theme-card-background);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid var(--color-primary);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px var(--theme-shadow);
+}
+
+.info-icon {
+    flex-shrink: 0;
+    font-size: 1.8rem;
+    margin-right: 1.5rem;
+    color: var(--theme-link-default);
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--theme-nav-hover-bg);
+    border-radius: 50%;
+    font-style: normal;
+}
+
+.info-item h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--theme-link-default);
+}
+
+/* ======================================= */
+/* ESTILOS DE LINKS DICAS DE SAUDE E LAZER */
+/* ======================================= */
+
+.dicas-link,
+.instagram-link {
+    color: var(--theme-link-default);
+    /* Garante visibilidade no dark mode */
+    text-decoration: none;
+}
+
+.dicas-link:hover,
+.instagram-link:hover {
+    text-decoration: underline;
+    color: var(--theme-link-hover);
+}
+
+
+/* ======================================= */
+/* ESTILOS DA TABELA */
+/* ======================================= */
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+}
+
+.data-table th,
+.data-table td {
+    padding: 0.75rem;
+    text-align: center;
+    border-bottom: 1px solid var(--theme-nav-hover-bg);
+}
+
+.data-table th {
+    background-color: var(--theme-nav-hover-bg);
+    color: var(--theme-link-default);
+    font-weight: 600;
+}
+
+/* Zebrado (Linhas Alternadas) */
+.data-table tbody tr:nth-child(even) {
+    background-color: var(--theme-background);
+}
+
+/* Hover de destaque (Zebrado) */
+.data-table tbody tr:hover {
+    background-color: var(--theme-nav-hover-bg);
+    cursor: pointer;
+}
+
+/* Linha de Total (Destaque forte) */
+.data-table tr.total-row {
+    font-weight: bold;
+    background-color: var(--theme-nav-hover-bg) !important;
+    border-top: 2px solid var(--theme-link-default);
+}
+
+
+.table-container {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.table-title {
+    margin-bottom: 1rem;
+    color: var(--theme-section-title-color);
+    text-align: center;
+}
+
+.series-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.series-checkbox {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.series-checkbox input {
+    margin-right: 0.25rem;
+}
+
+/* ======================================= */
+/* BOTÃO VOLTAR AO TOPO */
+/* ======================================= */
+
+.back-to-top {
+    display: none;
+    /* Inicia oculto, será mostrado via JavaScript */
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 999;
+    border: none;
+    outline: none;
+    background-color: var(--theme-button-bg);
+    color: var(--theme-footer-text);
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    line-height: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, opacity 0.3s;
+    opacity: 0.8;
+}
+
+.back-to-top:hover {
+    background-color: var(--theme-link-default);
+    opacity: 1;
+}
+
+/* Ajuste no mobile */
+@media (max-width: 600px) {
+    .back-to-top {
+        bottom: 15px;
+        right: 15px;
+        padding: 12px;
+        font-size: 18px;
+    }
+}
+
+/* ======================================= */
+/* RODAPÉ (FOOTER) e CADASTRO/LGPD */
+/* ======================================= */
+
+footer {
+    background-color: var(--theme-footer-bg);
+    color: var(--theme-footer-text);
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.footer-link {
+    color: var(--theme-footer-text);
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.lgpd-notice {
+    background-color: var(--theme-insight-bg);
+    border: 2px solid var(--theme-insight-border);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    font-size: 0.9rem;
+    text-align: center;
+    color: var(--theme-text);
+}
+
+.lgpd-header {
+    background-color: var(--theme-link-default);
+    color: var(--theme-footer-text);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.cadastro-header {
+
+    background-color: var(--theme-insight-bg);
+    border: 2px solid var(--theme-insight-border);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.botao-cadastro {
+    background-color: var(--theme-button-bg);
+    color: var(--theme-footer-text);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 15%;
+}
+
+.botao-cadastro a {
+    color: var(--theme-footer-text);
+    text-decoration: none;
+
+}
+
+/* ======================================= */
+/* MEDIA QUERIES */
+/* ======================================= */
+
+/* Desktop: Layout de 2 colunas para os cartões */
+@media (min-width: 769px) {
+    .info-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .info-item {
+        width: 48%;
+        margin-bottom: 0;
+    }
+}
+
+
+/* Mobile: Ajustes gerais */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    /* Ajuste para o botão de toggle em telas pequenas */
+    header {
+        padding-top: 4rem;
+        /* Aumenta o padding para dar espaço ao botão */
+        position: relative;
+    }
+
+    .theme-toggle-btn {
+        position: absolute;
+        top: 1rem;
+        right: 50%;
+        transform: translateX(50%);
+        width: calc(100% - 2rem);
+        text-align: center;
+        margin-top: 0;
+    }
+
+
+    .nav-links {
+        position: fixed;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        background-color: var(--theme-card-background);
+        flex-direction: column;
+        box-shadow: 0 5px 10px var(--theme-shadow);
+        transition: left 0.3s ease;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-link {
+        padding: 1rem;
+        border-bottom: 1px solid var(--theme-nav-hover-bg);
+        text-align: center;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .chart-container {
+        height: 400px;
+    }
+
+    .series-selector {
+        justify-content: center;
+    }
+
+    .botao-cadastro {
+        width: 100%;
+        /* Ajuste para o botão no mobile */
+    }
+}
+
+/* Estilo de Tabela responsiva (Cartões no Mobile) */
+@media (max-width: 600px) {
+    .data-table {
+        border: none;
+        width: 100%;
+    }
+
+    .data-table thead {
+        display: none;
+    }
+
+    .data-table,
+    .data-table tbody,
+    .data-table tr,
+    .data-table td {
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+
+    .data-table tr {
+        margin-bottom: 1rem;
+        border: 1px solid var(--theme-nav-hover-bg);
+        border-radius: 8px;
+        box-shadow: 0 2px 5px var(--theme-shadow);
+        background-color: var(--theme-card-background);
+        padding: 0.5rem 0;
+    }
+
+    .data-table tr:hover {
+        background-color: var(--theme-nav-hover-bg);
+    }
+
+    .data-table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        border: none;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .data-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 1rem;
+        font-weight: bold;
+        text-align: left;
+        color: var(--theme-link-default);
+    }
+
+    /* Destaque da Linha de Total no modo Cartão */
+    .data-table tr.total-row {
+        margin-top: 1.5rem;
+        border: 2px solid var(--theme-link-default);
+        box-shadow: 0 4px 10px var(--theme-shadow);
+    }
+}
+
+/* ======================================= */
+/*  CARROSSEL DE INFORMAÇÕES EXTRAS (ESTILIZADO) */
+/* ======================================= */
+
+.carousel-card {
+    background: linear-gradient(135deg, #007bff, #5a00b3);
+    color: var(--color-white);
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    min-height: 280px;
+}
+
+.carousel-slide {
+    display: none;
+    animation: fadeIn 0.7s ease-in-out;
+}
+
+.carousel-slide.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.carousel-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.15);
+}
+
+.carousel-slide h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+.carousel-slide p {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 650px;
+    margin: 0 auto;
+    color: #f2f2f2;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.25);
+    color: var(--color-white);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: background-color 0.3s;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.carousel-btn.prev {
+    left: 15px;
+}
+
+.carousel-btn.next {
+    right: 15px;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 8px;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.carousel-dot.active {
+    background-color: #ffffff;
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .carousel-slide h3 {
+        font-size: 1.2rem;
+    }
+
+    .carousel-slide p {
+        font-size: 0.95rem;
+    }
+}
+
+
+
+/* Fim do style.css */

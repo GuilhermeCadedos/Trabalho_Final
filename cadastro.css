@@ -1,0 +1,239 @@
+/* Definição das variáveis de cor (Tema Claro Padrão) */
+:root {
+    /* Cores de Ação e Destaque */
+    --azul-principal: #007bff;
+    --azul-escuro: #0056b3;
+    --azul-claro: #cfe2ff;
+
+    /* Cores de Fundo e Texto */
+    --cor-fundo-pagina: #f4f7f6;
+    --cor-fundo-container: white;
+    --cor-texto-principal: #333;
+    --cor-texto-secundario: #555;
+
+    /* Elementos de Borda e Sombra */
+    --cor-borda-input: #ccc;
+    --cor-sombra: rgba(0, 0, 0, 0.1);
+    --cor-fieldset-borda: var(--azul-claro);
+    /* Cores adicionais para o novo botão de tema */
+    --cor-toggle-background: transparent;
+    --cor-toggle-border: white;
+    --cor-toggle-hover: rgba(255, 255, 255, 0.2);
+}
+
+/* 🌙 Tema Escuro (Dark Mode) - Aplicado quando o body tem a classe 'dark-mode' */
+body.dark-mode {
+    /* Reajuste das Cores para o Tema Escuro */
+    --azul-principal: #5b9bd5;
+    --azul-escuro: #3e7cb1;
+    --azul-claro: #1f3a5f;
+
+    --cor-fundo-pagina: #121212;
+    --cor-fundo-container: #1e1e1e;
+    --cor-texto-principal: #e0e0e0;
+    --cor-texto-secundario: #a0a0a0;
+
+    --cor-borda-input: #555;
+    --cor-sombra: rgba(255, 255, 255, 0.05);
+    --cor-fieldset-borda: #333;
+}
+
+/* ---------------------------------- */
+/* Estilos Globais e Reset Básico */
+/* ---------------------------------- */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--cor-fundo-pagina);
+    margin: 0;
+    padding: 0;
+    color: var(--cor-texto-principal);
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave de tema */
+}
+
+h1,
+h2 {
+    color: var(--azul-principal);
+    margin-top: 0;
+}
+
+/* ---------------------------------- */
+/* Header (Cabeçalho) e Toggle Button */
+/* ---------------------------------- */
+header {
+    background-color: var(--azul-principal);
+    color: white;
+    padding: 1rem 1.5rem; /* Ajuste para espaçamento lateral */
+    text-align: center;
+    position: relative; /* Para posicionar o botão */
+    box-shadow: 0 2px 4px var(--cor-sombra);
+}
+
+header h1 {
+    margin: 0;
+    color: white;
+    font-size: 1.8rem;
+}
+
+/* Botão de Toggle de Tema */
+#theme-toggle {
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
+    background-color: var(--cor-toggle-background);
+    border: 2px solid var(--cor-toggle-border);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem; /* Aumentado ligeiramente para o emoji */
+    transition: background-color 0.3s, border-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1; /* Ajuda a centralizar o emoji */
+    padding: 0;
+}
+
+#theme-toggle:hover {
+    background-color: var(--cor-toggle-hover);
+}
+
+/* Estilo do emoji dentro do botão */
+#theme-icon {
+    font-size: 1.2rem;
+    line-height: 1;
+    color: white; /* O emoji usa a cor do texto/ícone */
+}
+
+/* ---------------------------------- */
+/* Main Container (Conteúdo Principal) */
+/* ---------------------------------- */
+.container {
+    padding: 2rem;
+    max-width: 600px;
+    margin: 2rem auto;
+    background-color: var(--cor-fundo-container);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--cor-sombra);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Parágrafo Introdutório */
+.intro-text {
+    margin-bottom: 1.5rem;
+    color: var(--azul-escuro);
+    font-style: italic;
+    line-height: 1.5; /* Melhor legibilidade */
+}
+
+/* ---------------------------------- */
+/* Fieldset e Formulário */
+/* ---------------------------------- */
+fieldset {
+    border: 1px solid var(--cor-fieldset-borda);
+    padding: 1.5rem; /* Mais espaçamento interno */
+    margin-bottom: 2rem;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+}
+
+fieldset legend {
+    padding: 0 0.75rem;
+    font-weight: bold;
+    color: var(--azul-principal);
+    font-size: 1.1rem;
+}
+
+/* Grupo de Formulário (Label + Input/Select) */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--cor-texto-secundario);
+}
+
+/* Inputs e Selects */
+input[type='text'],
+input[type='email'],
+input[type='number'],
+select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--cor-borda-input);
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    background-color: var(--cor-fundo-container); /* Para garantir a transição de cor de fundo */
+    color: var(--cor-texto-principal);
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--azul-principal);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* ---------------------------------- */
+/* Botões e Links */
+/* ---------------------------------- */
+.submit-button {
+    background-color: var(--azul-principal);
+    color: white;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.submit-button:hover {
+    background-color: var(--azul-escuro);
+}
+
+.submit-button:active {
+    transform: translateY(1px); /* Efeito de clique */
+}
+
+/* Link Voltar */
+.back-link {
+    margin-top: 1.5rem;
+    text-align: right;
+}
+
+.back-link a {
+    color: var(--azul-principal);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 0;
+    display: inline-block;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}
+
+/* ---------------------------------- */
+/* Footer (Rodapé) */
+/* ---------------------------------- */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: var(--azul-escuro);
+    color: white;
+    margin-top: 3rem;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}

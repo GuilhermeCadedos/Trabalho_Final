@@ -1,0 +1,32 @@
+Lembrar de colocar a pasta no htdocs e startar o apache + o mysql
+
+/************************/
+
+-- Criação do banco de dados se não existir:
+
+CREATE DATABASE IF NOT EXISTS cadastro_checkup;
+
+-- Seleciona o banco de dados:
+
+USE cadastro_checkup;
+
+-- Criação da Tabela: agendamentos se não existir:
+
+CREATE TABLE IF NOT EXISTIS agendamentos (
+    -- Chave Primária para identificação única de cada registro
+    id INT AUTO_INCREMENT PRIMARY KEY,
+
+    -- Dados Pessoais
+    nome VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE, -- E-mail é único para evitar duplicidade de inscrições
+    idade INT NOT NULL,
+    cpf VARCHAR(11) NOT NULL UNIQUE, -- CPF é único e armazenado como string de 11 caracteres (apenas números)
+
+    -- Dados para Triagem
+    cartao_sus VARCHAR(15), -- Cartão SUS é opcional e armazenado como string
+    historico_familiar ENUM('nao', 'sim', 'nao_sei') NOT NULL DEFAULT 'nao',
+
+    -- Data e hora do registro
+    data_inscricao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+
+);

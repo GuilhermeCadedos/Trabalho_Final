@@ -1,0 +1,5 @@
+"Procedimento";"2025/Jan";"2025/Fev";"2025/Mar";"2025/Abr";"2025/Mai";"2025/Jun";"2025/Jul";"2025/Ago"
+"0201010410 BIOPSIA DE PROSTATA";12;30;16;38;22;24;25;21
+"0202030105 DOSAGEM DE ANTIGENO PROSTATICO ESPECIFICO (PSA)";3242;2715;678;4726;3046;2525;2956;3158
+"0301010072 CONSULTA MEDICA EM ATENCAO ESPECIALIZADA";31023;37757;33989;41281;38992;40492;39624;39826
+```*(Nota: Eu removi as colunas de Nov/Dez de 2024 e a coluna "Total" para focar apenas nos dados do período principal, o que simplifica o código e a visualização.)*

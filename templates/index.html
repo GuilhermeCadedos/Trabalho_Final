@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Novembro Azul - Conscientização sobre o Câncer de Próstata</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link src="style.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style/style.css') }}"
+    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,9 +27,8 @@
       <div class="logo-container">
         <div class="logo">
           <img
-            src="./assets/laço-novembro.png"
-            alt="Laço azul, símbolo mundial de conscientização e combate ao câncer de próstata."
-            aria-hidden="false"
+            src="{{ url_for('static', filename='assets/laço-novembro.png') }}"
+            alt="Laço azul"
           />
         </div>
         <div
@@ -650,14 +652,12 @@
                 garanta um check-up preventivo gratuito para combater o câncer
                 de próstata. Sua saúde merece essa atenção.
               </p>
-              <button type="button" class="botao-cadastro">
-                <a
-                  href="cadastro.html"
-                  target="_blank"
-                  title="Ir para o Cadastro"
-                  >Ir para o cadastro</a
-                >
-              </button>
+              <a
+                href="{{ url_for('cadastro') }}"
+                class="botao-cadastro"
+                title="Ir para o Cadastro"
+                >Ir para o cadastro</a
+              >
             </div>
           </div>
         </div>
@@ -728,6 +728,39 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <div id="chat-bubble" class="chat-bubble" aria-label="Abrir Chatbot">
+      <i class="fas fa-comment-dots"></i>
+    </div>
+
+    <div id="chat-window" class="chat-window">
+      <div class="chat-header">
+        <h4>Assistente Novembro Azul</h4>
+        <button
+          id="chat-close-btn"
+          class="chat-close"
+          aria-label="Fechar Chatbot"
+        >
+          X
+        </button>
+      </div>
+      <div id="chat-messages" class="chat-messages"></div>
+      <div class="chat-input-container">
+        <input
+          type="text"
+          id="chat-input"
+          placeholder="Digite sua mensagem..."
+          aria-label="Campo de mensagem do Chatbot"
+        />
+        <button id="chat-send-btn" class="chat-send-btn">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+    <script>
+      const csvURL = "{{ url_for('static', filename='data/dados.csv') }}";
+    </script>
   </body>
 </html>

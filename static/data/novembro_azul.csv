@@ -1,0 +1,61 @@
+12/11/2025 16:41:40,Que horas são?,"Desculpe, não consegui processar sua pergunta no momento."
+12/11/2025 16:41:46,sintomas,"Desculpe, não consegui processar sua pergunta no momento."
+12/11/2025 16:44:38,Boa tarde!,"Desculpe, não consegui processar sua pergunta no momento."
+12/11/2025 16:44:47,sintomas,"Desculpe, não consegui processar sua pergunta no momento."
+12/11/2025 16:49:21,boa tarde,"Desculpe, não consegui processar sua pergunta no momento."
+12/11/2025 16:49:32,Td bem?,"Desculpe, não consegui processar sua pergunta no momento."
+12/11/2025 16:57:44,Boa tarde!,"Desculpe, não consegui processar sua pergunta no momento."
+12/11/2025 17:05:33,Boa tarde,"Desculpe, ocorreu um erro na comunicação com o servidor da IA."
+12/11/2025 17:07:38,olá,"Erro de comunicação: Invalid JSON payload received. Unknown name ""config"": Cannot find field."
+12/11/2025 17:09:05,Olá,"Erro de comunicação: Invalid JSON payload received. Unknown name ""systemInstruction"" at 'generation_config': Cannot find field."
+12/11/2025 17:11:00,olá,"Erro de comunicação: Invalid value at 'system_instruction' (type.googleapis.com/google.ai.generativelanguage.v1beta.Content), ""
+    Você é um assistente especializado em conscientização do Novembro Azul.
+    Sempre dê ênfase a temas de câncer de próstata, prevenção, sintomas e check-ups.
+    A hora atual é 17:10.
+    Responda de forma clara, amigável e educativa.
+    """
+12/11/2025 17:11:14,sintomas,"Erro de comunicação: Invalid value at 'system_instruction' (type.googleapis.com/google.ai.generativelanguage.v1beta.Content), ""
+    Você é um assistente especializado em conscientização do Novembro Azul.
+    Sempre dê ênfase a temas de câncer de próstata, prevenção, sintomas e check-ups.
+    A hora atual é 17:11.
+    Responda de forma clara, amigável e educativa.
+    """
+12/11/2025 17:12:49,olá,"Erro de comunicação: Invalid value at 'system_instruction' (type.googleapis.com/google.ai.generativelanguage.v1beta.Content), ""Você é um assistente especializado em conscientização do Novembro Azul.
+    Sempre dê ênfase a temas de câncer de próstata, prevenção, sintomas e check-ups.
+    A hora atual é 17:12.
+    Responda de forma clara, amigável e educativa."""
+12/11/2025 17:13:34,oi,"Erro de comunicação: Invalid value at 'system_instruction' (type.googleapis.com/google.ai.generativelanguage.v1beta.Content), ""Você é um assistente especializado em conscientização do Novembro Azul.
+    Sempre dê ênfase a temas de câncer de próstata, prevenção, sintomas e check-ups.
+    A hora atual é 17:13.
+    Responda de forma clara, amigável e educativa."""
+12/11/2025 17:15:31,olá,"Erro de comunicação: Invalid value at 'system_instruction' (type.googleapis.com/google.ai.generativelanguage.v1beta.Content), ""Você é um assistente especializado em conscientização do Novembro Azul.     Sempre dê ênfase a temas de câncer de próstata, prevenção, sintomas e check-ups.     A hora atual é 17:15.     Responda de forma clara, amigável e educativa."""
+12/11/2025 17:17:54,oi,"Erro de comunicação: Invalid value at 'system_instruction' (type.googleapis.com/google.ai.generativelanguage.v1beta.Content), ""Você é um assistente especializado em conscientização do Novembro Azul. Sempre dê ênfase a temas de câncer de próstata, prevenção, sintomas e check-ups. A hora atual é 17:17. Responda de forma clara, amigável e educativa."""
+12/11/2025 17:20:38,ola,Erro de comunicação: The model is overloaded. Please try again later.
+12/11/2025 17:25:56,oi,Não consegui entender sua pergunta. Pode reformular?
+12/11/2025 17:26:12,como está?,"Olá! Estou muito bem, obrigado por perguntar!"
+12/11/2025 17:29:14,o que novembro azul,Não consegui entender sua pergunta. Pode reformular?
+12/11/2025 17:29:27,O que é novembro azul?,Não consegui entender sua pergunta. Pode reformular?
+12/11/2025 17:31:20,olá,"Olá! Seja muito bem-vindo(a)!
+
+Que bom ter você por aqui. Sou seu assistente para o Novembro Azul e estou pronto para conversarmos sobre a importância da saúde masculina, especialmente focando na prevenção e detecção precoce do câncer de próstata.
+
+O Novembro Azul é um"
+12/11/2025 17:31:33,td bem?,Não consegui entender sua pergunta. Pode reformular?
+12/11/2025 17:31:43,tudo bem?,Não consegui entender sua pergunta. Pode reformular?
+12/11/2025 17:31:53,como você está,Não consegui entender sua pergunta. Pode reformular?
+12/11/2025 17:32:04,sintomas,Não consegui entender sua pergunta. Pode reformular?
+12/11/2025 17:33:34,Olá,Olá! Seja muito bem-vindo(a)!
+12/11/2025 17:33:44,tudo bem?,Não consegui entender sua pergunta. Pode reformular?
+12/11/2025 17:40:50,olá,Não consegui entender sua pergunta. Pode reformular?
+12/11/2025 17:41:00,como está,Não consegui entender sua pergunta. Pode reformular?
+12/11/2025 17:44:11,olá,Erro de comunicação: API key not valid. Please pass a valid API key.
+12/11/2025 17:46:29,olá,"Olá! Seja muito bem-vindo(a)! 👋
+
+Que bom ter você por aqui. Sou seu assistente especializado em conscientização"
+12/11/2025 17:46:40,como você está?,"Olá! Muito obrigado por perguntar. Eu estou muito bem e com a ""energia azul"" no máximo, pronto para espalhar informações importantes!
+
+Meu"
+12/11/2025 17:47:22,o que é novembro azul?,Não consegui entender sua pergunta. Pode reformular?
+12/11/2025 17:47:31,o que é novembro azul?,Não consegui entender sua pergunta. Pode reformular?
+12/11/2025 17:49:23,O que é novembro azul?,O modelo retornou uma resposta vazia.
+12/11/2025 17:50:49,o que é novembro azul?,"Olá! Sou o Chatbot do Novembro Azul. Não consegui gerar uma resposta detalhada agora, mas lembre-se: fazer check-ups regularmente e ficar atento aos sintomas é fundamental. Pergunte sobre prevenção, sintomas ou exames!"

@@ -847,6 +847,180 @@ footer {
     }
 }
 
+/* ======================================= */
+/* CHATBOT STYLES */
+/* ======================================= */
+
+/* Balão flutuante para abrir o chat */
+.chat-bubble {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--azul-principal);
+    color: var(--branco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    /* Garante que fique acima de outros elementos */
+    transition: background-color 0.3s ease;
+}
+
+.chat-bubble:hover {
+    background-color: var(--azul-escuro);
+}
+
+/* Janela Principal do Chatbot */
+.chat-window {
+    position: fixed;
+    bottom: 90px;
+    /* Acima do balão */
+    right: 20px;
+    width: 350px;
+    max-width: 90%;
+    /* Responsividade para telas menores */
+    height: 400px;
+    background-color: var(--branco);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    /* Estado inicial: Escondido */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+.chat-window.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Header do Chat */
+.chat-header {
+    background-color: var(--azul-principal);
+    color: var(--branco);
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.chat-header h4 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.chat-close {
+    background: none;
+    border: none;
+    color: var(--branco);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Área de Mensagens */
+.chat-messages {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: var(--cinza-claro);
+    /* Estilo para a barra de rolagem, se desejar */
+    scrollbar-width: thin;
+    scrollbar-color: var(--azul-principal) #f0f0f0;
+}
+
+/* Bolhas de Mensagem */
+.chat-message {
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    max-width: 80%;
+    line-height: 1.4;
+    font-size: 0.9rem;
+}
+
+.user-message {
+    background-color: var(--azul-principal);
+    color: var(--branco);
+    align-self: flex-end;
+    /* Alinha à direita */
+    margin-left: auto;
+    border-bottom-right-radius: 2px;
+}
+
+.bot-message {
+    background-color: var(--branco);
+    color: var(--cinza-escuro);
+    border: 1px solid #ccc;
+    align-self: flex-start;
+    /* Alinha à esquerda */
+    margin-right: auto;
+    border-bottom-left-radius: 2px;
+}
+
+/* Indicador de Digitação */
+.typing-indicator {
+    background-color: #e9ecef;
+    font-style: italic;
+    color: #6c757d;
+}
+
+/* Área de Input */
+.chat-input-container {
+    display: flex;
+    padding: 10px 15px;
+    border-top: 1px solid #ccc;
+    background-color: var(--branco);
+}
+
+#chat-input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+.chat-send-btn {
+    background-color: var(--azul-principal);
+    color: var(--branco);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.chat-send-btn:hover {
+    background-color: var(--azul-escuro);
+}
+
+/* Estilo para links dentro da mensagem do bot */
+.bot-message a {
+    color: var(--azul-escuro);
+    /* Cor diferente para destacar o link */
+    text-decoration: underline;
+    font-weight: bold;
+}
 
 
 /* Fim do style.css */

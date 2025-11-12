@@ -50,7 +50,9 @@ function parseCSV(csvText) {
 
 async function loadData() {
   try {
-    const response = await fetch("dados.csv");
+    const response = await fetch("/static/csv/dados.csv");
+
+    // usa a variável definida no HTML
     const csvText = await response.text();
     parseCSV(csvText);
     return true;
